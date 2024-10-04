@@ -1,0 +1,48 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Start NextApp (Dev Server)",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": [
+        "next",
+        "dev",
+        "-p",
+        "3062"
+      ],
+      "cwd": "${workspaceFolder}",
+      "console": "externalTerminal",
+      "stopOnEntry": false
+    },
+    {
+      "name": "Build NextApp Project",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": [
+        "next",
+        "build"
+      ],
+      "cwd": "${workspaceFolder}",
+      "console": "externalTerminal",
+      "stopOnEntry": false
+    },
+    {
+      "name": "Start NextApp (Prod Server)",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": [
+        "next",
+        "start",
+        "-p",
+        "3062"
+      ],
+      "cwd": "${workspaceFolder}",
+      "console": "externalTerminal",
+      "stopOnEntry": false
+    }
+  ]
+}
