@@ -19,7 +19,8 @@ function Site() {
     } else {
       clearModalId();
     }
-  }, [clearModalId, currentUser, setModalId]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentUser]);
 
   if (!currentUser) {
     return null;
