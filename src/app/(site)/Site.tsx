@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect } from "react";
-import { useAuthentication } from "@/states";
 import { Button } from "@nextui-org/button";
 import { useModalController } from "@/components/modals";
+import { useAuthentication } from "@/states";
 
 function Site() {
   const { user: currentUser, clearUser } = useAuthentication();

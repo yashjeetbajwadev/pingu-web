@@ -21,7 +21,7 @@ type AsyncSetState<TState> = (stateUpdate: React.SetStateAction<TState>) => Prom
  *
  * @param initialState initialize with some state value same as `useState`
  */
-export function withStateAsync<TState>([state, setState]: [
+export function useStateAsync<TState>([state, setState]: [
   TState,
   Dispatch<SetStateAction<TState>>
 ]): [TState, AsyncSetState<TState>] {

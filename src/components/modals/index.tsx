@@ -7,8 +7,8 @@ import {
   useEffect,
   useState
 } from "react";
-import { useHashState, usePreviousValue, withStateAsync } from "@/hooks";
 import { sleep } from "@/lib/utils";
+import { useHashState, usePreviousValue, useStateAsync } from "@/hooks";
 
 export interface ModalState {
   id: string;
@@ -34,7 +34,7 @@ export const ModalControllerProvider = ({ children }: ModalControllerProviderPro
   const clearModalId = useCallback(() => setCurrentId(""), [setCurrentId]);
   const previousId = usePreviousValue(currentId);
 
-  const [modals, setModals] = withStateAsync(useState<ModalState[]>([]));
+  const [modals, setModals] = useStateAsync(useState<ModalState[]>([]));
 
   const switchModal = useCallback(
     async (id: string) => {
