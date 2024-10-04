@@ -1,4 +1,5 @@
 import React, { Dispatch, SetStateAction, useCallback, useEffect, useRef } from "react";
+import { UserSessionModel } from "@/services/types";
 
 type Updater<TState> = (state: TState) => TState;
 
@@ -21,10 +22,11 @@ type AsyncSetState<TState> = (stateUpdate: React.SetStateAction<TState>) => Prom
  *
  * @param initialState initialize with some state value same as `useState`
  */
-export function useStateAsync<TState>([state, setState]: [
-  TState,
-  Dispatch<SetStateAction<TState>>
-]): [TState, AsyncSetState<TState>] {
+export function useStateAsync<TState>(
+  p0: () => void,
+  p1: (UserSessionModel | null | undefined)[],
+  [state, setState]: [TState, Dispatch<SetStateAction<TState>>]
+): [TState, AsyncSetState<TState>] {
   const resolvers = useRef<((state: TState) => void)[]>([]);
 
   useEffect(() => {
